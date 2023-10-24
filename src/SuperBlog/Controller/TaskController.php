@@ -16,7 +16,9 @@ class TaskController extends BaseController
     public function create()
     {
         try{
-            $task = Task::makeFromArray($_POST);
+            $requestBody = file_get_contents('php://input');
+            $putParams = json_decode($requestBody, true);
+            $task = Task::makeFromArray($putParams);
 
             return $this->response([
                 "status"=> "success",
