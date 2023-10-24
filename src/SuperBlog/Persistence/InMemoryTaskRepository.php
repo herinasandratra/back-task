@@ -4,14 +4,30 @@ namespace SuperBlog\Persistence;
 use SuperBlog\Model\Task;
 use SuperBlog\Model\TaskRepository;
 
+/**
+ * Summary of InMemoryTaskRepository
+ */
 class InMemoryTaskRepository implements TaskRepository
 {
+    /**
+     * Summary of connection
+     * @var 
+     */
     private $connection;
+    /**
+     * Summary of __construct
+     */
     public function __construct()
     {
         $db = Database::getInstance();
         $this->connection = $db->getConnection();
     }
+    /**
+     * Summary of create
+     * @param \SuperBlog\Model\Task $task
+     * @throws \RuntimeException
+     * @return array
+     */
     public function create(Task $task)
     {
         try{
@@ -34,6 +50,12 @@ class InMemoryTaskRepository implements TaskRepository
             throw new \RuntimeException( "Erreur d'insertion : " . $e->getMessage());
         }
     }
+    /**
+     * Summary of read
+     * @param int $taskId
+     * @throws \RuntimeException
+     * @return array
+     */
     public function read(int $taskId)
     {
         try {
@@ -66,6 +88,13 @@ class InMemoryTaskRepository implements TaskRepository
         }
     }
 
+    /**
+     * Summary of update
+     * @param int $id
+     * @param \SuperBlog\Model\Task $task
+     * @throws \RuntimeException
+     * @return array
+     */
     public function update(int $id, Task $task)
     {
         try {
@@ -97,6 +126,12 @@ class InMemoryTaskRepository implements TaskRepository
         }
     }
 
+    /**
+     * Summary of delete
+     * @param int $id
+     * @throws \RuntimeException
+     * @return bool
+     */
     public function delete(int $id)
     {
         try {
@@ -121,6 +156,12 @@ class InMemoryTaskRepository implements TaskRepository
         }
     }
 
+    /**
+     * Summary of list
+     * @param mixed $params
+     * @throws \RuntimeException
+     * @return array
+     */
     public function list($params)
     {
         try {
@@ -175,6 +216,10 @@ class InMemoryTaskRepository implements TaskRepository
     }
 
     // Method to calculate the total number of records (replace with your own logic)
+    /**
+     * Summary of getTotalRecords
+     * @return mixed
+     */
     private function getTotalRecords()
     {
         // Implement your logic to count the total records in the database

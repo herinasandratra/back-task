@@ -5,14 +5,30 @@ use SuperBlog\Model\Task;
 use SuperBlog\Model\TaskRepository;
 
 
+/**
+ * Summary of TaskController
+ */
 class TaskController extends BaseController
 {
     
+    /**
+     * Summary of taskRepository
+     * @var 
+     */
     private $taskRepository;
+    /**
+     * Summary of __construct
+     * @param \SuperBlog\Model\TaskRepository $taskRepository
+     */
     public function __construct(TaskRepository $taskRepository)
     {
         $this->taskRepository = $taskRepository;
     }
+    /**
+     * Summary of create
+     * @throws \RuntimeException
+     * @return void
+     */
     public function create()
     {
         try{
@@ -30,6 +46,12 @@ class TaskController extends BaseController
         }
     }
 
+    /**
+     * Summary of read
+     * @param int $id
+     * @throws \RuntimeException
+     * @return void
+     */
     public function read(int $id)
     {
         try{
@@ -43,6 +65,12 @@ class TaskController extends BaseController
         }
     }
 
+    /**
+     * Summary of update
+     * @param int $id
+     * @throws \RuntimeException
+     * @return void
+     */
     public function update(int $id)
     {
         try{
@@ -60,6 +88,12 @@ class TaskController extends BaseController
         }
     }
 
+    /**
+     * Summary of delete
+     * @param int $id
+     * @throws \RuntimeException
+     * @return void
+     */
     public function delete(int $id)
     {
         try{
@@ -73,6 +107,11 @@ class TaskController extends BaseController
         }
     }
 
+    /**
+     * Summary of list
+     * @throws \RuntimeException
+     * @return void
+     */
     public function list()
     {
         try{
