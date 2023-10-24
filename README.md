@@ -15,6 +15,8 @@ Improvements and pull requests are welcome.
 Change as your environment configuration : db mysql connection configuration the following file:
 [src/SuperBlog/Persistence/DbConf.php](/src/SuperBlog/Persistence/DbConf.php)
 
+import Database inside [tasks_handler.sql] in your mysql database
+
 ## Run
 
 To run this test, you need to clone it and install dependencies:
